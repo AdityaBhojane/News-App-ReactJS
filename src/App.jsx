@@ -19,6 +19,7 @@ function App() {
           `https://newsapi.org/v2/everything?q=${search}`,{
             headers: {
               'X-Api-Key': `${import.meta.env.VITE_NEWS_API_KEY}`,
+              'Connection': 'keep-alive' // Ensures HTTP/1.1 is used
             }
           }
         );
