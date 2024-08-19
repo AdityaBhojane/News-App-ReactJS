@@ -16,10 +16,9 @@ function App() {
         try {
         setLoading(true)
         const response = await fetch(
-          `https://newsapi.org/v2/everything?q=${search}&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`,{
+          `https://newsapi.org/v2/everything?q=${search}`,{
             headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
+              'X-Api-Key': `${import.meta.env.VITE_NEWS_API_KEY}`,
             }
           }
         );
