@@ -16,7 +16,12 @@ function App() {
         try {
         setLoading(true)
         const response = await fetch(
-          `https://newsapi.org/v2/everything?q=${search}&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`
+          `https://newsapi.org/v2/everything?q=${search}&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`,{
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            }
+          }
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
