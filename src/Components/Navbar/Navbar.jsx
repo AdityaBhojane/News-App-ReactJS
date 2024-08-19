@@ -1,4 +1,5 @@
-function Navbar() {
+/* eslint-disable react/prop-types */
+function Navbar({searchHandler}) {
   return (
     <>
       <div className="navbar bg-base-100 relative z-10">
@@ -48,25 +49,35 @@ function Navbar() {
                 </li>
               </ul>
             </div>
-            <a className="btn btn-ghost text-2xl">News Feed</a>
+            <a
+            onClick={()=>searchHandler("Cricket")}
+             className="btn btn-ghost text-2xl">News Feed</a>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 flex gap-5 font-bold">
               <li>
-                <a>Sports</a>
+                <a
+                onClick={()=>searchHandler("Sports India")}
+                >Sports</a>
               </li>
               <li>
-                <a>Bollywood</a>
+                <a
+                 onClick={()=>searchHandler("Marvel and DC movies")}
+                >Movies</a>
               </li>
               <li>
                 <details>
                   <summary>Country</summary>
                   <ul className="p-2">
                     <li>
-                      <a>India</a>
+                      <a 
+                      onClick={()=>searchHandler("india")}
+                      >India</a>
                     </li>
                     <li>
-                      <a>USA</a>
+                      <a
+                      onClick={()=>searchHandler("USA")}
+                      >USA</a>
                     </li>
                   </ul>
                 </details>
@@ -74,7 +85,9 @@ function Navbar() {
             </ul>
           </div>
           <div className="ml-[20%]">
-            <a className="btn btn-primary">Latest News</a>
+            <a
+            onClick={()=>searchHandler("Latest News")}
+            className="btn btn-primary">Latest News</a>
           </div>
         </div>
       </div>
